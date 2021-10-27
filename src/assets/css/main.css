@@ -19,3 +19,8 @@
   --color-blue-hover: hsl(235, 45%, 61%);
   --color-blue-text: hsl(236, 100%, 87%);
 }
+
+* {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+}
