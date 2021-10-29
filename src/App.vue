@@ -1,6 +1,8 @@
 <template>
   <div class="wrapper">
-    <profile-card />
+    <div class="layout">
+      <profile-card />
+    </div>
   </div>
 </template>
 
@@ -19,5 +21,12 @@ export default {
 .wrapper {
   height: 100vh;
   background-color: var(--color-background);
+  position: relative;
+}
+.layout {
+  height: 50vh;
+  margin: 25vh auto;
+  background-color: azure;
+  position: absolute;
 }
 </style>
