@@ -21,12 +21,9 @@ export default {
 .wrapper {
   height: 100vh;
   background-color: var(--color-background);
-  position: relative;
+  padding: 24vh 8vw;
 }
 .layout {
-  height: 50vh;
-  margin: 25vh auto;
-  background-color: azure;
-  position: absolute;
+  height: 100%;
 }
 </style>
