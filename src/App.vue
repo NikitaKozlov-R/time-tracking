@@ -1,5 +1,6 @@
 <template>
-  <span></span>
+  <div class="wrapper">
+  </div>
 </template>
 
 <script>
@@ -11,4 +12,8 @@ export default {
 </script>
 
 <style>
+.wrapper {
+  height: 100%;
+  background-color: var(--color-background);
+}
 </style>
