@@ -1,13 +1,17 @@
 <template>
   <div class="wrapper">
+    <profile-card />
   </div>
 </template>
 
 <script>
+import ProfileCard from "@/components/profile-card.vue";
 
 export default {
   name: 'App',
-  components: {}
+  components: {
+    ProfileCard,
+ }
 }
 </script>
 
