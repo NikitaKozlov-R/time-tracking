@@ -17,7 +17,7 @@ export default {
 
 <style>
 .wrapper {
-  height: 100%;
+  height: 100vh;
   background-color: var(--color-background);
 }
 </style>
