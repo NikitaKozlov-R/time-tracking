@@ -1,5 +1,5 @@
 <template>
-  <div class="tt-profile"></div>
+  <div class="tt-study">Study!</div>
 </template>
 
 <script>
@@ -7,9 +7,9 @@ export default {}
 </script>
 
 <style>
-.tt-profile {
+.tt-study {
   height: 100%;
   width: 100%;
-  background-color: var(--color-blue-dark);
+  background-color: var(--color-light-red);
 }
 </style>
