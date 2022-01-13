@@ -1,10 +1,9 @@
 <template>
-  <div class="profile"></div>
+  <div class="profile" />
 </template>
 
 <script>
 export default {}
 </script>
 
-<style>
-</style>
+<style></style>
