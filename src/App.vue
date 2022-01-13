@@ -20,7 +20,8 @@ export default {
 <style>
 .wrapper {
   height: 100vh;
-  background-color: var(--color-background);
+  /* background-color: var(--color-background); */
+  background-color: antiquewhite;
   padding: 24vh 8vw;
 }
 .layout {
