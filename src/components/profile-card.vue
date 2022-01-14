@@ -14,11 +14,11 @@
         <p class="tt-profile__name">{{ name }}</p>
       </div>
     </div>
-    <div class="tt-rofile__timeline">
+    <div class="tt-rofile__timeframes">
       <button
         class="tt-profile__button"
         :class="{active: dailyActive}"
-        @click="changeTimeline(), addActiveButton('daily')"
+        @click="changeTimeframes(), addActiveButton('daily')"
       >
         Daily
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
@@ -26,7 +26,7 @@
       <button
         class="tt-profile__button"
         :class="{active: weeklyActive}"
-        @click="changeTimeline(), addActiveButton('weekly')"
+        @click="changeTimeframes(), addActiveButton('weekly')"
       >
         Weekly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
@@ -34,7 +34,7 @@
       <button
         class="tt-profile__button"
         :class="{active: monthlyActive}"
-        @click="changeTimeline(), addActiveButton('monthly')"
+        @click="changeTimeframes(), addActiveButton('monthly')"
       >
         Monthly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
@@ -68,7 +68,7 @@ export default {
     monthlyActive: false,
   }),
   methods: {
-    changeTimeline() {
+    changeTimeframes() {
       console.log('Timeline!')
     },
     addActiveButton(timeline) {
@@ -134,7 +134,7 @@ export default {
   font-size: 2.4rem;
   font-weight: 300;
 }
-.tt-rofile__timeline {
+.tt-rofile__timeframes {
   width: 100%;
   height: 100%;
   padding: 24px;
