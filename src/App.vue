@@ -2,29 +2,25 @@
   <div class="tt-wrapper">
     <profile-card />
     <div class="tt-layout">
-      <work-card />
-      <play-card />
-      <study-card />
-      <exercise-card />
-      <social-card />
-      <self-care-card />
+      <tracking-card />
+      <tracking-card />
+      <tracking-card />
+      <tracking-card />
+      <tracking-card />
+      <tracking-card />
     </div>
   </div>
 </template>
 
 <script>
 import ProfileCard from '@/components/profile-card.vue'
-import WorkCard from '@/components/work-card.vue'
-import PlayCard from '@/components/play-card.vue'
-import StudyCard from '@/components/study-card.vue'
+import TrackingCard from '@/components/tracking-card.vue'
 
 export default {
   name: 'App',
   components: {
     ProfileCard,
-    WorkCard,
-    PlayCard,
-    StudyCard,
+    TrackingCard,
   },
 }
 </script>
