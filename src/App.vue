@@ -1,6 +1,6 @@
 <template>
   <div class="tt-wrapper">
-    <profile-card />
+    <profile-card name="Jeremy Robson" avatar="img/image-jeremy.png" />
     <div class="tt-layout">
       <tracking-card />
       <tracking-card />
