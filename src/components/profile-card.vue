@@ -9,7 +9,11 @@
         <p class="tt-profile__name">{{ name }}</p>
       </div>
     </div>
-    <div class="tt-rofile__timeline"></div>
+    <div class="tt-rofile__timeline">
+      <button class="tt-profile__button">Daily</button>
+      <button class="tt-profile__button active">Weekly</button>
+      <button class="tt-profile__button">Monthly</button>
+    </div>
   </div>
 </template>
 
@@ -35,5 +39,6 @@ export default {
   width: 100%;
   background-color: var(--color-blue-dark);
   border-radius: 16px;
+  padding: 24px;
 }
 </style>
