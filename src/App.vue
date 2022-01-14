@@ -2,12 +2,12 @@
   <div class="tt-wrapper">
     <profile-card name="Jeremy Robson" avatar="img/image-jeremy.png" />
     <div class="tt-layout">
-      <tracking-card />
-      <tracking-card />
-      <tracking-card />
-      <tracking-card />
-      <tracking-card />
-      <tracking-card />
+      <tracking-card
+        v-for="activity in trackingData"
+        :key="activity.title"
+        :activity="activity.title"
+        :time-frames="activity.timeframes"
+      />
     </div>
   </div>
 </template>
@@ -15,6 +15,7 @@
 <script>
 import ProfileCard from '@/components/profile-card.vue'
 import TrackingCard from '@/components/tracking-card.vue'
+import trackingData from '@/assets/data.js'
 
 export default {
   name: 'App',
@@ -22,6 +23,9 @@ export default {
     ProfileCard,
     TrackingCard,
   },
+  data: () => ({
+    trackingData,
+  }),
 }
 </script>
 

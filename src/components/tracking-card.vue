@@ -1,9 +1,22 @@
 <template>
-  <div class="tt-card">Card!</div>
+  <div class="tt-card">
+    <h2>{{ activity }}</h2>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    activity: {
+      type: String,
+      required: true,
+    },
+    timeframes: {
+      type: Array,
+      required: true,
+    },
+  },
+}
 </script>
 
 <style>
