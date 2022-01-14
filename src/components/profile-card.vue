@@ -15,15 +15,27 @@
       </div>
     </div>
     <div class="tt-rofile__timeline">
-      <button class="tt-profile__button" @click="changeTimeline(), changeActiveButton()">
+      <button
+        class="tt-profile__button"
+        :class="{active: dailyActive}"
+        @click="changeTimeline(), addActiveButton('daily')"
+      >
         Daily
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </button>
-      <button class="tt-profile__button active" @click="changeTimeline(), changeActiveButton()">
+      <button
+        class="tt-profile__button"
+        :class="{active: weeklyActive}"
+        @click="changeTimeline(), addActiveButton('weekly')"
+      >
         Weekly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </button>
-      <button class="tt-profile__button" @click="changeTimeline(), changeActiveButton()">
+      <button
+        class="tt-profile__button"
+        :class="{active: monthlyActive}"
+        @click="changeTimeline(), addActiveButton('monthly')"
+      >
         Monthly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </button>
@@ -32,6 +44,12 @@
 </template>
 
 <script>
+const dataMapper = {
+  daily: 'dailyActive',
+  weekly: 'weeklyActive',
+  monthly: 'monthlyActive',
+}
+
 export default {
   props: {
     name: {
@@ -44,12 +62,23 @@ export default {
       default: 'img/image-jeremy.png',
     },
   },
+  data: () => ({
+    dailyActive: false,
+    weeklyActive: true,
+    monthlyActive: false,
+  }),
   methods: {
     changeTimeline() {
       console.log('Timeline!')
     },
-    changeActiveButton() {
-      console.log('Button!')
+    addActiveButton(timeline) {
+      this.resetActiveButton()
+      this[dataMapper[timeline]] = true
+    },
+    resetActiveButton() {
+      Object.entries(dataMapper).forEach(([key, value]) => {
+        this[value] = false
+      })
     },
   },
 }
