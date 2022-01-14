@@ -61,4 +61,20 @@ export default {
   justify-items: center;
   align-items: start;
 }
+
+@media screen and (max-width: 769px) {
+  .tt-wrapper {
+    height: auto;
+    min-height: 100vh;
+    padding: 64px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px 0;
+  }
+  .tt-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px 0;
+  }
+}
 </style>
