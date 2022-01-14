@@ -1,6 +1,6 @@
 <template>
   <div class="tt-wrapper">
-    <profile-card name="Jeremy Robson" avatar="img/image-jeremy.png" />
+    <profile-card :name="userData.name" :avatar="userData.avatar" />
     <div class="tt-layout">
       <tracking-card
         v-for="activity in trackingData"
@@ -25,6 +25,10 @@ export default {
   },
   data: () => ({
     trackingData,
+    userData: {
+      name: 'Jeremy Robson',
+      avatar: 'img/image-jeremy.png',
+    },
   }),
 }
 </script>
