@@ -12,7 +12,7 @@ export default {
       required: true,
     },
     timeframes: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },

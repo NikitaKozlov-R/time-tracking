@@ -6,7 +6,7 @@
         v-for="activity in trackingData"
         :key="activity.title"
         :activity="activity.title"
-        :time-frames="activity.timeframes"
+        :timeframes="activity.timeframes"
       />
     </div>
   </div>
