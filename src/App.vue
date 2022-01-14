@@ -33,7 +33,7 @@ export default {
   display: grid;
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
-  gap: 0px 16px;
+  gap: 0px 24px;
   grid-auto-flow: row dense;
   justify-items: center;
   align-items: start;
@@ -46,7 +46,7 @@ export default {
   grid-auto-flow: row dense;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 16px 16px;
+  gap: 24px 24px;
   grid-template-areas:
     '. . .'
     '. . .';
