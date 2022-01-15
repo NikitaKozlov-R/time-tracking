@@ -121,6 +121,14 @@ export default {
   width: 80px;
   height: 80px;
 }
+
+@media screen and (max-width: 769px) {
+  .tt-profile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .tt-profile__heading {
   width: 100%;
   margin-top: 32px;
@@ -174,5 +182,19 @@ export default {
 }
 .tt-profile__button:hover .tt-profile__button--icon {
   opacity: 1;
+}
+@media screen and (max-width: 769px) {
+  .tt-rofile__timeframes {
+    padding: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tt-profile__button {
+    width: 96px;
+    justify-content: center;
+  }
+  .tt-profile__button--icon {
+    display: none;
+  }
 }
 </style>
