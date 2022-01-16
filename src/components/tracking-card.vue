@@ -27,6 +27,7 @@ export default {
   computed: {
     cardColorHandler() {
       const currentCardColor = 'var(--color-' + this.colorMapper[this.activity] + ')'
+      // if value this.activity doesn't match with colorMapper
       if (!currentCardColor) {
         const defaultCardColor = 'var(--color-blue-dark)'
         return defaultCardColor
