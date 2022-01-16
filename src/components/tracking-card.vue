@@ -1,7 +1,5 @@
 <template>
-  <div class="tt-card">
-    <h2>{{ activity }}</h2>
-  </div>
+  <div class="tt-card" :style="{backgroundColor: cardColorHandler}"></div>
 </template>
 
 <script>
@@ -16,6 +14,27 @@ export default {
       required: true,
     },
   },
+  data: () => ({
+    colorMapper: {
+      Work: 'work',
+      Play: 'play',
+      Study: 'study',
+      Exercise: 'exercise',
+      Social: 'social',
+      Selfсare: 'self-care',
+    },
+  }),
+  computed: {
+    cardColorHandler() {
+      const currentCardColor = 'var(--color-' + this.colorMapper[this.activity] + ')'
+      // if value this.activity doesn't match with colorMapper
+      if (!currentCardColor) {
+        const defaultCardColor = 'var(--color-blue-dark)'
+        return defaultCardColor
+      }
+      return currentCardColor
+    },
+  },
 }
 </script>
 
@@ -23,7 +42,12 @@ export default {
 .tt-card {
   height: 100%;
   width: 100%;
-  background-color: var(--color-light-orange);
   border-radius: 16px;
+}
+
+@media screen and (max-width: 769px) {
+  .tt-card {
+    min-height: 256px;
+  }
 }
 </style>

@@ -26,8 +26,8 @@ export default {
   data: () => ({
     trackingData,
     userData: {
-      name: 'Jeremy Robson',
-      avatar: 'img/image-jeremy.png',
+      name: 'Elena Abramova',
+      avatar: 'img/image-elen.jpg',
     },
   }),
 }

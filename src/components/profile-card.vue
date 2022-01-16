@@ -120,12 +120,29 @@ export default {
 .tt-profile__image {
   width: 80px;
   height: 80px;
+  border-radius: 100%;
 }
 
 @media screen and (max-width: 769px) {
   .tt-profile {
     display: flex;
     flex-direction: column;
+  }
+  .tt-profile__user {
+    display: flex;
+    flex-direction: row;
+    padding: 32px 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  .tt-profile__avatar {
+    margin-right: 16px;
+    width: 94px;
+    height: 68px;
+  }
+  .tt-profile__image {
+    width: 64px;
+    height: 64px;
   }
 }
 
@@ -142,6 +159,16 @@ export default {
   font-size: 2.4rem;
   font-weight: 300;
 }
+
+@media screen and (max-width: 769px) {
+  .tt-profile__heading {
+    margin-top: 0px;
+  }
+  .tt-profile__name {
+    font-size: 1.4rem;
+  }
+}
+
 .tt-rofile__timeframes {
   width: 100%;
   height: 100%;
