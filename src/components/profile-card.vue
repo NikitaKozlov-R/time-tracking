@@ -120,6 +120,7 @@ export default {
 .tt-profile__image {
   width: 80px;
   height: 80px;
+  border-radius: 100%;
 }
 
 @media screen and (max-width: 769px) {
