@@ -85,7 +85,7 @@ export default [
     },
   },
   {
-    title: 'Self Care',
+    title: 'Selfсare',
     timeframes: {
       daily: {
         current: 0,
