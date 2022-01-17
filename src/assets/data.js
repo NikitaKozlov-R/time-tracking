@@ -1,6 +1,6 @@
 export default [
   {
-    title: 'Work',
+    title: 'work',
     timeframes: {
       daily: {
         current: 5,
@@ -17,7 +17,7 @@ export default [
     },
   },
   {
-    title: 'Play',
+    title: 'play',
     timeframes: {
       daily: {
         current: 1,
@@ -34,7 +34,7 @@ export default [
     },
   },
   {
-    title: 'Study',
+    title: 'study',
     timeframes: {
       daily: {
         current: 0,
@@ -51,7 +51,7 @@ export default [
     },
   },
   {
-    title: 'Exercise',
+    title: 'exercise',
     timeframes: {
       daily: {
         current: 1,
@@ -68,7 +68,7 @@ export default [
     },
   },
   {
-    title: 'Social',
+    title: 'social',
     timeframes: {
       daily: {
         current: 1,
@@ -85,7 +85,7 @@ export default [
     },
   },
   {
-    title: 'Selfсare',
+    title: 'selfсare',
     timeframes: {
       daily: {
         current: 0,
