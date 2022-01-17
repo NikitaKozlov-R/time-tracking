@@ -15,13 +15,31 @@ export default {
     },
   },
   data: () => ({
-    colorMapper: {
-      Work: 'work',
-      Play: 'play',
-      Study: 'study',
-      Exercise: 'exercise',
-      Social: 'social',
-      Selfсare: 'self-care',
+    assetsMapper: {
+      Work: {
+        color: 'work',
+        icon: 'icon-work.svg',
+      },
+      Play: {
+        color: 'play',
+        icon: 'icon-play.svg',
+      },
+      Study: {
+        color: 'study',
+        icon: 'icon-study.svg',
+      },
+      Exercise: {
+        color: 'exercise',
+        icon: 'icon-exercise.svg',
+      },
+      Social: {
+        color: 'social',
+        icon: 'icon-social.svg',
+      },
+      Selfсare: {
+        color: 'self-care',
+        icon: 'icon-self-care.svg',
+      },
     },
   }),
   computed: {
