@@ -1,5 +1,5 @@
 <template>
-  <div class="tt-card" :style="{backgroundColor: `var(--color-${cardColorHandler})`}"></div>
+  <div class="tt-card" :style="{backgroundColor: `var(--color-${cardAsset.color})`}"></div>
 </template>
 
 <script>
@@ -16,50 +16,48 @@ export default {
   },
   data: () => ({
     assetsMapper: {
-      Work: {
+      work: {
+        title: 'Work',
         color: 'work',
         icon: 'icon-work.svg',
       },
-      Play: {
+      play: {
+        title: 'Play',
         color: 'play',
         icon: 'icon-play.svg',
       },
-      Study: {
+      study: {
+        title: 'Study',
         color: 'study',
         icon: 'icon-study.svg',
       },
-      Exercise: {
+      exercise: {
+        title: 'Exercise',
         color: 'exercise',
         icon: 'icon-exercise.svg',
       },
-      Social: {
+      social: {
+        title: 'Social',
         color: 'social',
         icon: 'icon-social.svg',
       },
-      Selfсare: {
+      selfсare: {
+        title: 'Self Care',
         color: 'self-care',
         icon: 'icon-self-care.svg',
       },
     },
   }),
   computed: {
-    cardColorHandler() {
-      const currentCardColor = this.assetsMapper[this.activity].color
-      // if value this.activity doesn't match with assetsMapper
-      if (!currentCardColor) {
-        const defaultCardColor = 'var(--color-blue-dark)'
-        return defaultCardColor
+    cardAsset() {
+      const currentAsset = this.assetsMapper[this.activity]
+      const fallbackAsset = {
+        title: 'Some Activity',
+        color: 'blue-dark',
+        icon: 'icon-work.svg',
       }
-      return currentCardColor
-    },
-    cardIconHandler() {
-      const currentCardIcon = this.assetsMapper[this.activity].icon
-      // if value this.activity.icon doesn't match with assetsMapper
-      if (!currentCardIcon) {
-        const defaultCardIcon = 'icon-play.svg'
-        return defaultCardIcon
-      }
-      return currentCardIcon
+
+      return currentAsset ? currentAsset : fallbackAsset
     },
   },
 }
