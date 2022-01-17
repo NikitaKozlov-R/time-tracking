@@ -1,5 +1,5 @@
 <template>
-  <div class="tt-card" :style="{backgroundColor: cardColorHandler}"></div>
+  <div class="tt-card" :style="{backgroundColor: `var(--color-${cardColorHandler})`}"></div>
 </template>
 
 <script>
@@ -26,13 +26,22 @@ export default {
   }),
   computed: {
     cardColorHandler() {
-      const currentCardColor = 'var(--color-' + this.colorMapper[this.activity] + ')'
-      // if value this.activity doesn't match with colorMapper
+      const currentCardColor = this.assetsMapper[this.activity].color
+      // if value this.activity doesn't match with assetsMapper
       if (!currentCardColor) {
         const defaultCardColor = 'var(--color-blue-dark)'
         return defaultCardColor
       }
       return currentCardColor
+    },
+    cardIconHandler() {
+      const currentCardIcon = this.assetsMapper[this.activity].icon
+      // if value this.activity.icon doesn't match with assetsMapper
+      if (!currentCardIcon) {
+        const defaultCardIcon = 'icon-play.svg'
+        return defaultCardIcon
+      }
+      return currentCardIcon
     },
   },
 }
