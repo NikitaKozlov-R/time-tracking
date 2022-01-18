@@ -11,17 +11,16 @@
       <div class="tt-card__heading">
         <h2 class="tt-card__title">{{ cardAsset.title }}</h2>
         <button class="tt-card__button">
-          <svg class="tt-card__button-svg" width="21" height="5" xmlns="http://www.w3.org/2000/svg">
+          <svg class="tt-card__button-svg" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-              fill="#BBC0FF"
               fill-rule="evenodd"
             />
           </svg>
         </button>
       </div>
       <div class="tt-card__tracking">
-        <h3 class="tt-card__current">{{ timeframes.weekly.current }}</h3>
+        <h3 class="tt-card__current">{{ timeframes.weekly.current }}hrs</h3>
         <p class="tt-card__previous">Last Week - {{ timeframes.weekly.previous }}</p>
       </div>
     </div>
@@ -114,18 +113,22 @@ export default {
   right: 24px;
   top: -8px;
 }
-
-@media screen and (max-width: 769px) {
-}
-
 .tt-card__text-box {
   z-index: 2;
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-blue-dark);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
   border-radius: 16px;
   padding: 24px;
+}
+.tt-card__text-box:hover {
+  background-color: var(--color-blue-hover);
 }
 .tt-card__heading {
   width: 100%;
@@ -136,5 +139,64 @@ export default {
 .tt-card__title {
   font-size: 1rem;
   color: white;
+}
+.tt-card__button {
+  width: 32px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-blue-text);
+  fill: currentColor;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.tt-card__button:hover {
+  transform: scale(1.2);
+  color: white;
+}
+.tt-card__button:focus {
+  transform: scale(1.2);
+  color: white;
+}
+.tt-card__button-svg {
+  width: 21px;
+  height: 5px;
+}
+
+@media screen and (max-width: 769px) {
+  .tt-card__text-box {
+    width: calc(100% + 2px);
+    margin-left: -1px;
+    margin-bottom: -1px;
+  }
+}
+
+.tt-card__tracking {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.tt-card__current {
+  font-size: 4rem;
+  color: white;
+}
+.tt-card__previous {
+  font-size: 0.8rem;
+  color: var(--color-blue-text);
+}
+
+@media screen and (max-width: 769px) {
+  .tt-card__tracking {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .tt-card__current {
+    font-size: 1.8rem;
+    line-height: 90%;
+  }
 }
 </style>
