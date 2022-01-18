@@ -157,7 +157,6 @@ export default {
 .tt-profile__name {
   color: white;
   font-size: 2.4rem;
-  font-weight: 300;
 }
 
 @media screen and (max-width: 769px) {
