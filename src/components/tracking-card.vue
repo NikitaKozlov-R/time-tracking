@@ -1,11 +1,13 @@
 <template>
   <div class="tt-card" :style="{backgroundColor: `var(--color-${cardAsset.color})`}">
-    <img
-      class="tt-card__icon"
-      :src="require('@/assets/img/' + cardAsset.icon)"
-      alt="Activity Icon"
-    />
-    <div class="tt-card__data">
+    <div class="tt-card__icon-box">
+      <img
+        class="tt-card__icon"
+        :src="require('@/assets/img/' + cardAsset.icon)"
+        alt="Activity Icon"
+      />
+    </div>
+    <div class="tt-card__text-box">
       <div class="tt-card__heading">
         <h2 class="tt-card__title">{{ cardAsset.title }}</h2>
         <button class="tt-card__button">
@@ -89,12 +91,50 @@ export default {
 
 <style>
 .tt-card {
+  position: relative;
+  z-index: 0;
   height: 100%;
   width: 100%;
-  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
+.tt-card__icon-box {
+  position: relative;
+  height: 56px;
+  width: 100%;
   overflow: hidden;
+}
+.tt-card__icon {
+  position: absolute;
+  z-index: 1;
+  right: 24px;
+  top: -8px;
 }
 
 @media screen and (max-width: 769px) {
+}
+
+.tt-card__text-box {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-blue-dark);
+  border-radius: 16px;
+  padding: 24px;
+}
+.tt-card__heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tt-card__title {
+  font-size: 1rem;
+  color: white;
 }
 </style>
