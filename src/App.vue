@@ -34,7 +34,6 @@ export default {
 
 <style>
 .tt-wrapper {
-  font-family: 'Rubik';
   height: 100vh;
   background-color: var(--color-background);
   padding: 16vh 8vw;
