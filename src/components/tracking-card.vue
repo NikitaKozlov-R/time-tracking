@@ -20,8 +20,8 @@
         </button>
       </div>
       <div class="tt-card__tracking">
-        <h3 class="tt-card__current">{{ timeframes.weekly.current }}hrs</h3>
-        <p class="tt-card__previous">Last Week - {{ timeframes.weekly.previous }}</p>
+        <h3 class="tt-card__current">{{ timeframeHours.current }}hrs</h3>
+        <p class="tt-card__previous">Last Week - {{ timeframeHours.previous }}</p>
       </div>
     </div>
   </div>
@@ -72,6 +72,7 @@ export default {
         icon: 'icon-self-care.svg',
       },
     },
+    selectedTimeframe: 'weekly',
   }),
   computed: {
     cardAsset() {
@@ -83,6 +84,14 @@ export default {
       }
 
       return currentAsset ? currentAsset : fallbackAsset
+    },
+    timeframeHours() {
+      const currentHours = this.timeframes[this.selectedTimeframe]
+      const fallbackHours = {
+        current: '?',
+        previous: 'Something went wrong!',
+      }
+      return currentHours ? currentHours : fallbackHours
     },
   },
 }
