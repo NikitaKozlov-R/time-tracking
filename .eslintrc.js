@@ -31,9 +31,5 @@ module.exports = {
     'vue/no-multiple-template-root': 0,
   },
 
-  extends: [
-    'plugin:prettier/recommended',
-    'plugin:vue/recommended',
-    '@vue/prettier',
-  ],
+  extends: ['plugin:prettier/recommended', 'plugin:vue/recommended', '@vue/prettier'],
 }
