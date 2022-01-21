@@ -21,7 +21,7 @@
       </div>
       <div class="tt-card__tracking">
         <h3 class="tt-card__current">{{ timeframeHours.current }}hrs</h3>
-        <p class="tt-card__previous">Last Week - {{ timeframeHours.previous }}</p>
+        <p class="tt-card__previous">Last {{ currentSubtitle }} - {{ timeframeHours.previous }}</p>
       </div>
     </div>
   </div>
@@ -72,6 +72,11 @@ export default {
         icon: 'icon-self-care.svg',
       },
     },
+    timeframeNamingMapper: {
+      daily: 'Day',
+      weekly: 'Week',
+      monthly: 'Month',
+    },
     selectedTimeframe: 'weekly',
   }),
   computed: {
@@ -92,6 +97,9 @@ export default {
         previous: 'Something went wrong!',
       }
       return currentHours ? currentHours : fallbackHours
+    },
+    currentSubtitle() {
+      return this.timeframeNamingMapper[this.selectedTimeframe]
     },
   },
 }
