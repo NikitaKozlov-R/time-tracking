@@ -15,30 +15,18 @@
       </div>
     </div>
     <div class="tt-rofile__timeframes">
-      <button
-        class="tt-profile__button"
-        :class="{active: dailyActive}"
-        @click="changeTimeframes(), addActiveButton('daily')"
-      >
+      <router-link class="tt-profile__button" to="/daily" active-class="dailyActive">
         Daily
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
-      </button>
-      <button
-        class="tt-profile__button"
-        :class="{active: weeklyActive}"
-        @click="changeTimeframes(), addActiveButton('weekly')"
-      >
+      </router-link>
+      <router-link class="tt-profile__button" to="/weekly" active-class="weeklyActive">
         Weekly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
-      </button>
-      <button
-        class="tt-profile__button"
-        :class="{active: monthlyActive}"
-        @click="changeTimeframes(), addActiveButton('monthly')"
-      >
+      </router-link>
+      <router-link class="tt-profile__button" to="/monthly" active-class="monthlyActive">
         Monthly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
-      </button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -68,9 +56,6 @@ export default {
     monthlyActive: false,
   }),
   methods: {
-    changeTimeframes() {
-      console.log('Timeline!')
-    },
     addActiveButton(timeline) {
       this.resetActiveButton()
       this[dataMapper[timeline]] = true
