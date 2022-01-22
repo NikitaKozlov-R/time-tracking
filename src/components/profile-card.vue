@@ -15,15 +15,15 @@
       </div>
     </div>
     <div class="tt-rofile__timeframes">
-      <router-link class="tt-profile__button" to="/daily" active-class="dailyActive">
+      <router-link class="tt-profile__button" to="/time-tracking/daily" active-class="active">
         Daily
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </router-link>
-      <router-link class="tt-profile__button" to="/weekly" active-class="weeklyActive">
+      <router-link class="tt-profile__button" to="/time-tracking/weekly" active-class="active">
         Weekly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </router-link>
-      <router-link class="tt-profile__button" to="/monthly" active-class="monthlyActive">
+      <router-link class="tt-profile__button" to="/time-tracking/monthly" active-class="active">
         Monthly
         <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </router-link>
@@ -32,12 +32,6 @@
 </template>
 
 <script>
-const activeClassMapper = {
-  daily: 'dailyActive',
-  weekly: 'weeklyActive',
-  monthly: 'monthlyActive',
-}
-
 export default {
   props: {
     name: {
@@ -48,22 +42,6 @@ export default {
       type: String,
       required: false,
       default: 'img/image-elen.jpg',
-    },
-  },
-  data: () => ({
-    dailyActive: false,
-    weeklyActive: true,
-    monthlyActive: false,
-  }),
-  methods: {
-    addActiveButton(timeframe) {
-      this.resetActiveButton()
-      this[activeClassMapper[timeframe]] = true
-    },
-    resetActiveButton() {
-      Object.entries(activeClassMapper).forEach(([key, value]) => {
-        this[value] = false
-      })
     },
   },
 }
