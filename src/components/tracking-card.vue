@@ -77,7 +77,6 @@ export default {
       weekly: 'Week',
       monthly: 'Month',
     },
-    selectedTimeframe: 'weekly',
   }),
   computed: {
     cardAsset() {
@@ -91,15 +90,16 @@ export default {
       return currentAsset ? currentAsset : fallbackAsset
     },
     timeframeHours() {
-      const currentHours = this.timeframes[this.selectedTimeframe]
+      const currentHours = this.timeframes[this.$route.params.timeframe]
       const fallbackHours = {
-        current: '?',
-        previous: 'Something went wrong!',
+        current: 0,
+        previous: '...',
       }
+
       return currentHours ? currentHours : fallbackHours
     },
     currentSubtitle() {
-      return this.timeframeNamingMapper[this.selectedTimeframe]
+      return this.timeframeNamingMapper[this.$route.params.timeframe]
     },
   },
 }
