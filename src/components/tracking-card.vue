@@ -93,7 +93,7 @@ export default {
       const currentHours = this.timeframes[this.$route.params.timeframe]
       const fallbackHours = {
         current: 0,
-        previous: '...',
+        previous: 'Error',
       }
 
       return currentHours ? currentHours : fallbackHours
