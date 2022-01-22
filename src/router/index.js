@@ -7,6 +7,21 @@ const routes = [
     name: 'Time Tracking',
     component: TimeTracking,
   },
+  {
+    path: '/time-tracking/daily',
+    name: 'Daily Tracking',
+    component: TimeTracking,
+  },
+  {
+    path: '/time-tracking/weekly',
+    name: 'Weekly Tracking',
+    component: TimeTracking,
+  },
+  {
+    path: '/time-tracking/monthly',
+    name: 'Monthly Tracking',
+    component: TimeTracking,
+  },
 ]
 
 const router = createRouter({
