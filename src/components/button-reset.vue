@@ -35,7 +35,7 @@ export default {
   padding: 8px 0;
 }
 .button__self {
-  width: 100%;
+  width: calc(100% + 8px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
