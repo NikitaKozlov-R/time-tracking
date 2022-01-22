@@ -25,17 +25,17 @@
       </button-reset>
     </div>
     <div class="tt-rofile__timeframes">
-      <router-link class="tt-profile__button" to="/time-tracking/daily" active-class="active">
+      <router-link class="tt-profile__link" to="/time-tracking/daily" active-class="active">
         Daily
-        <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
+        <img class="tt-profile__link--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </router-link>
-      <router-link class="tt-profile__button" to="/time-tracking/weekly" active-class="active">
+      <router-link class="tt-profile__link" to="/time-tracking/weekly" active-class="active">
         Weekly
-        <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
+        <img class="tt-profile__link--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </router-link>
-      <router-link class="tt-profile__button" to="/time-tracking/monthly" active-class="active">
+      <router-link class="tt-profile__link" to="/time-tracking/monthly" active-class="active">
         Monthly
-        <img class="tt-profile__button--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
+        <img class="tt-profile__link--icon" src="@/assets/img/arrow-right.png" alt="Arrow icon" />
       </router-link>
     </div>
   </div>
@@ -166,7 +166,7 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.tt-profile__button {
+.tt-profile__link {
   font-size: 1rem;
   color: var(--color-blue-text);
   cursor: pointer;
@@ -179,24 +179,24 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-.tt-profile__button.active {
+.tt-profile__link.active {
   color: white;
 }
-.tt-profile__button:hover {
+.tt-profile__link:hover {
   background-color: var(--color-blue-hover);
   color: white;
 }
-.tt-profile__button:focus {
+.tt-profile__link:focus {
   background-color: var(--color-blue-hover);
   color: white;
 }
-.tt-profile__button--icon {
+.tt-profile__link--icon {
   max-height: 100%;
   height: 12px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0;
 }
-.tt-profile__button:hover .tt-profile__button--icon {
+.tt-profile__link:hover .tt-profile__link--icon {
   opacity: 1;
 }
 @media screen and (max-width: 769px) {
@@ -205,11 +205,11 @@ export default {
     flex-direction: row;
     justify-content: space-between;
   }
-  .tt-profile__button {
+  .tt-profile__link {
     width: 96px;
     justify-content: center;
   }
-  .tt-profile__button--icon {
+  .tt-profile__link--icon {
     display: none;
   }
 }
