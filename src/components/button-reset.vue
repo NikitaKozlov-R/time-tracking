@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     resetTimeframe() {
-      alert('sasa')
+      this.$router.push('/time-tracking/')
     },
   },
 }
