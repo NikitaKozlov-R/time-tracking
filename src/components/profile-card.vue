@@ -32,7 +32,7 @@
 </template>
 
 <script>
-const dataMapper = {
+const activeClassMapper = {
   daily: 'dailyActive',
   weekly: 'weeklyActive',
   monthly: 'monthlyActive',
@@ -47,7 +47,7 @@ export default {
     avatar: {
       type: String,
       required: false,
-      default: 'img/image-jeremy.png',
+      default: 'img/image-elen.jpg',
     },
   },
   data: () => ({
@@ -56,12 +56,12 @@ export default {
     monthlyActive: false,
   }),
   methods: {
-    addActiveButton(timeline) {
+    addActiveButton(timeframe) {
       this.resetActiveButton()
-      this[dataMapper[timeline]] = true
+      this[activeClassMapper[timeframe]] = true
     },
     resetActiveButton() {
-      Object.entries(dataMapper).forEach(([key, value]) => {
+      Object.entries(activeClassMapper).forEach(([key, value]) => {
         this[value] = false
       })
     },
