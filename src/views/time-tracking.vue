@@ -1,13 +1,16 @@
 <template>
   <div class="tt-wrapper">
     <profile-card :name="userData[0].name" :avatar="userData[0].avatar" />
-    <div class="tt-layout">
+    <div v-if="$route.params.timeframe" class="tt-layout">
       <tracking-card
         v-for="activity in timeframesData"
         :key="activity.title"
         :activity="activity.title"
         :timeframes="activity.timeframes"
       />
+    </div>
+    <div v-else class="tt-baner">
+      <h1 class="tt-baner__heading">Please select a time period</h1>
     </div>
   </div>
 </template>
@@ -17,6 +20,7 @@ import ProfileCard from '@/components/profile-card.vue'
 import TrackingCard from '@/components/tracking-card.vue'
 import timeframesData from '@/assets/dataMappers/timeframes.js'
 import userData from '@/assets/dataMappers/users.js'
+
 export default {
   name: 'App',
   components: {
@@ -58,6 +62,21 @@ export default {
   justify-items: center;
   align-items: start;
 }
+.tt-baner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-blue-dark);
+  border-radius: 16px;
+  padding: 16px;
+}
+.tt-baner__heading {
+  font-size: 2.4rem;
+  color: var(--color-blue-text);
+}
+
 @media screen and (max-width: 769px) {
   .tt-wrapper {
     height: auto;
@@ -71,6 +90,9 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 16px 0;
+  }
+  .tt-baner__heading {
+    font-size: 1.4rem;
   }
 }
 </style>

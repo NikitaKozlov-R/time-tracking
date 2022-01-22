@@ -7,6 +7,11 @@ const routes = [
     name: 'Time Tracking',
     component: TimeTracking,
   },
+  {
+    path: '/time-tracking/:timeframe',
+    name: 'Time Tracking Selected',
+    component: TimeTracking,
+  },
 ]
 
 const router = createRouter({
