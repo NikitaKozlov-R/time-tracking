@@ -1,17 +1,19 @@
 <template>
   <div class="tt-wrapper">
     <profile-card :name="userData[0].name" :avatar="userData[0].avatar" />
-    <div v-if="$route.params.timeframe" class="tt-layout">
-      <tracking-card
-        v-for="activity in timeframesData"
-        :key="activity.title"
-        :activity="activity.title"
-        :timeframes="activity.timeframes"
-      />
-    </div>
-    <div v-else class="tt-baner">
-      <h1 class="tt-baner__heading">Please select a time period</h1>
-    </div>
+    <transition name="mode-fade" mode="out-in" appear>
+      <div v-if="$route.params.timeframe" class="tt-layout">
+        <tracking-card
+          v-for="activity in timeframesData"
+          :key="activity.title"
+          :activity="activity.title"
+          :timeframes="activity.timeframes"
+        />
+      </div>
+      <div v-else class="tt-baner">
+        <h1 class="tt-baner__heading">Please select a time period</h1>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -35,6 +37,15 @@ export default {
 </script>
 
 <style>
+.mode-fade-enter-active,
+.mode-fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.mode-fade-enter-from,
+.mode-fade-leave-to {
+  opacity: 0;
+}
 .tt-wrapper {
   height: 100vh;
   background-color: var(--color-background);
