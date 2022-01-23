@@ -98,4 +98,14 @@ export default {
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width: 769px) {
+  .tt-slide {
+    width: calc(100% + 2px);
+    height: 114px;
+    overflow-y: scroll;
+    margin-left: -1px;
+    margin-bottom: -1px;
+  }
+}
 </style>
