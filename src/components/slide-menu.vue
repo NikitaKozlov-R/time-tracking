@@ -18,15 +18,22 @@
         </button>
       </div>
     </div>
+    <div class="tt-slide__list">
+      <slide-menu-item action="color" />
+      <slide-menu-item action="order" />
+      <slide-menu-item action="pin" />
+    </div>
   </div>
 </template>
 
 <script>
 import SlideSmallButton from '@/components/slide-small-button.vue'
+import SlideMenuItem from '@/components/slide-menu-item.vue'
 
 export default {
   components: {
     SlideSmallButton,
+    SlideMenuItem,
   },
 }
 </script>
@@ -84,5 +91,11 @@ export default {
 .tt-slide__close-btn:focus {
   transform: rotate(-180deg);
   color: white;
+}
+.tt-slide__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
