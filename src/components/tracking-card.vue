@@ -7,10 +7,10 @@
         alt="Activity Icon"
       />
     </div>
-    <div class="tt-card__text-box">
+    <div v-if="isMenuHidden" class="tt-card__text-box">
       <div class="tt-card__heading">
         <h2 class="tt-card__title">{{ cardAsset.title }}</h2>
-        <button class="tt-card__button">
+        <button class="tt-card__button" @click="openMenu()">
           <svg class="tt-card__button-svg" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
@@ -24,11 +24,17 @@
         <p class="tt-card__previous">Last {{ currentSubtitle }} - {{ timeframeHours.previous }}</p>
       </div>
     </div>
+    <slide-menu v-else />
   </div>
 </template>
 
 <script>
+import SlideMenu from '@/components/slide-menu.vue'
+
 export default {
+  components: {
+    SlideMenu,
+  },
   props: {
     activity: {
       type: String,
@@ -77,6 +83,7 @@ export default {
       weekly: 'Week',
       monthly: 'Month',
     },
+    isMenuHidden: true,
   }),
   computed: {
     cardAsset() {
@@ -100,6 +107,11 @@ export default {
     },
     currentSubtitle() {
       return this.timeframeNamingMapper[this.$route.params.timeframe]
+    },
+  },
+  methods: {
+    openMenu() {
+      this.isMenuHidden = !this.isMenuHidden
     },
   },
 }
