@@ -7,24 +7,28 @@
         alt="Activity Icon"
       />
     </div>
-    <div v-if="isMenuHidden" class="tt-card__text-box">
-      <div class="tt-card__heading">
-        <h2 class="tt-card__title">{{ cardAsset.title }}</h2>
-        <button class="tt-card__button" @click="openMenu()">
-          <svg class="tt-card__button-svg" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-              fill-rule="evenodd"
-            />
-          </svg>
-        </button>
+    <transition name="mode-fade" mode="out-in" appear>
+      <div v-if="isMenuHidden" class="tt-card__text-box">
+        <div class="tt-card__heading">
+          <h2 class="tt-card__title">{{ cardAsset.title }}</h2>
+          <button class="tt-card__button" @click="openMenu()">
+            <svg class="tt-card__button-svg" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="tt-card__tracking">
+          <h3 class="tt-card__current">{{ timeframeHours.current }}hrs</h3>
+          <p class="tt-card__previous">
+            Last {{ currentSubtitle }} - {{ timeframeHours.previous }}
+          </p>
+        </div>
       </div>
-      <div class="tt-card__tracking">
-        <h3 class="tt-card__current">{{ timeframeHours.current }}hrs</h3>
-        <p class="tt-card__previous">Last {{ currentSubtitle }} - {{ timeframeHours.previous }}</p>
-      </div>
-    </div>
-    <slide-menu v-else />
+      <slide-menu v-else @openMenu="openMenu()" />
+    </transition>
   </div>
 </template>
 
@@ -118,6 +122,15 @@ export default {
 </script>
 
 <style>
+.mode-fade-enter-active,
+.mode-fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.mode-fade-enter-from,
+.mode-fade-leave-to {
+  opacity: 0;
+}
 .tt-card {
   position: relative;
   z-index: 0;
