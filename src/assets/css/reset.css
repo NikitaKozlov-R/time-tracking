@@ -4,6 +4,7 @@
 *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
   display: revert;
+  font-family: 'Rubik';
 }
 
 /* Preferred box-sizing value */

@@ -222,6 +222,7 @@ export default {
 .tt-card__current {
   font-size: 4rem;
   color: white;
+  font-weight: 300;
 }
 .tt-card__previous {
   font-size: 0.8rem;
