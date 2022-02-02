@@ -13,17 +13,13 @@
       <div v-else class="tt-baner">
         <lottie-player
           class="tt-baner__player"
-          src="https://assets7.lottiefiles.com/packages/lf20_5er3kigb.json"
+          src="https://assets5.lottiefiles.com/packages/lf20_a77dgxyy.json"
           background="transparent"
           speed="1"
           loop
           autoplay
         ></lottie-player>
-        <h1 class="tt-baner__heading">
-          Please select
-          <br />
-          a time period
-        </h1>
+        <h1 class="tt-baner__heading">Please select a time period</h1>
       </div>
     </transition>
   </div>
@@ -89,6 +85,7 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--color-blue-dark);
@@ -96,13 +93,13 @@ export default {
   padding: 16px;
 }
 .tt-baner__heading {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   color: var(--color-blue-text);
   margin-left: 16px;
 }
 .tt-baner__player {
-  width: 112px;
-  height: 112px;
+  width: 256px;
+  height: 256px;
 }
 
 @media screen and (max-width: 769px) {
@@ -124,8 +121,8 @@ export default {
     margin-left: 8px;
   }
   .tt-baner__player {
-    width: 64px;
-    height: 64px;
+    width: 112px;
+    height: 112px;
   }
 }
 </style>
